@@ -112,7 +112,7 @@ instructions.
 
 Whenever possible, Docker uses a build-cache to accelerate the `docker build`
 process significantly. This is indicated by the `CACHED` message in the console
-output. (For more information, see the [`Dockerfile` best practices guide](https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices/):
+output:
 
 ```console
 $ docker build -t svendowideit/ambassador .
@@ -130,6 +130,8 @@ $ docker build -t svendowideit/ambassador .
  => => writing image sha256:1affb80ca37018ac12067fa2af38cc5bcc2a8f09963de  0.0s
  => => naming to docker.io/svendowideit/ambassador                         0.0s
 ```
+
+For more information, see the [`Dockerfile` best practices guide](https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices/).
 
 By default, the build cache is based on results from previous builds on the machine
 on which you are building. The `--cache-from` option also allows you to use a
@@ -1472,7 +1474,8 @@ KiB Swap:  1441840 total,        0 used,  1441840 free.  1324440 cached Mem
     1 root      20   0   19744   2336   2080 R  0.0  0.1   0:00.04 top
 ```
 
-To examine the result further, you can use `docker exec`:
+To examine the result further, you can use `docker exec` (do this in a separate 
+terminal window):
 
 ```console
 $ docker exec -it test ps aux
